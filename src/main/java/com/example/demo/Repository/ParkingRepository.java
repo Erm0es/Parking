@@ -9,7 +9,7 @@ import com.example.demo.Entities.Parking;
 
 public interface ParkingRepository extends CrudRepository<Parking, Long> {
    @Query("""
-            SELECT p FROM ParkingEvent p WHERE NOT (p.isActive) = true
+            SELECT p FROM Parking p WHERE NOT (p.isActive) = true
             """)
     List<Parking> filterOnActiveParking();
   }
